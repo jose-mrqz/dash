@@ -20,9 +20,9 @@ elif ENV_DEBUG in ("off", "false", "0"):
 else:
     raise ValueError("Invalid DONITO_DEBUG value")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "dash.onrender.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "dash-x52b.onrender.com"]
 CSRF_TRUSTED_ORIGINS = [
-    "https://dash.onrender.com",
+    "https://dash-x52b.onrender.com",
     "http://localhost",
     "http://127.0.0.1",
 ]
