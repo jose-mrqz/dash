@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-97x=#7ol0tedgvc5g6d+hsxw*l@y7_60p$(hld=h9ax&e34&td'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ENV_DEBUG: str = os.environ.get("DONITO_DEBUG", "on").lower()
+ENV_DEBUG: str = os.environ.get("DASH_DEBUG", "on").lower()
 if ENV_DEBUG in ("on", "true", "1"):
     DEBUG = True
 elif ENV_DEBUG in ("off", "false", "0"):
@@ -82,9 +82,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'server.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+# Database https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DATABASES = {
     "default": (
         {
