@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block extra_head %}
+    <script src="https://cdn.jsdelivr.net/npm/powerbi-client@2.22.2/dist/powerbi.min.js"></script>
+{% endblock %}
+{% block content %}
+    <div id="reportContainer" class="w-full h-full"></div>
+{% endblock %}
+{% block extra_script %}
+    var userAadToken = "{{ access_token }}";
+    var embedUrl = "{{ embed_url }}";
+    var reportId = "{{ object.report_id }}";
+    var models = window['powerbi-client'].models;
+    var reportContainer = document.getElementById('reportContainer');
+    var embedConfig = {
+    type: "report",
+    id: reportId,
+    embedUrl: embedUrl,
+    accessToken: userAadToken,
+    tokenType: models.TokenType.Aad,
+    settings: {
+    panes: {
+    filters: { visible: false },
+    pageNavigation: { visible: true }
+    }
+    }
+    };
+    var powerbi = window.powerbi;
+    var report = powerbi.embed(reportContainer, embedConfig);
+    report.on("loaded", function() {
+    console.log("Report loaded");
+    });
+    report.on("rendered", function() {
+    console.log("Report rendered");
+    });
+    report.on("error", function(event) {
+    console.error(event.detail);
+    });
+{% endblock %}

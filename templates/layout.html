@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block extra_head %}{% endblock %}
+{% block body %}
+    <div class="h-screen flex flex-col gap-2">
+        {% include 'navbar.html' %}
+        <div class="flex flex-1 flex-row">
+            <div class="w-1/5 overflow-auto">{% include 'sidebar.html' %}</div>
+            <div class="flex-1 overflow-auto">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_script %}{% endblock %}

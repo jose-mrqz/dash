@@ -1,0 +1,6 @@
+[tool.black]
+line-length = 80
+
+[tool.isort]
+src_paths = ["core", "web"]
+

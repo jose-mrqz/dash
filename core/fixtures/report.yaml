@@ -1,0 +1,10 @@
+- model: core.report
+  pk: 1
+  fields:
+    name: Dashboard mapa
+    report_id: 9fa9178f-0bc3-44ef-ae19-cda24f309fcb
+- model: core.report
+  pk: 2
+  fields:
+    name: Dashboard locatario
+    report_id: 990cf1fe-172f-4fc3-bb93-4ff122ea7133
